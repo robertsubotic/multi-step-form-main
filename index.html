@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <style>
+    @font-face {
+      font-family: 'Ubuntu-Regular';
+      src: url('assets/fonts/Ubuntu-Regular.ttf') format('truetype');
+    }
+    body {
+      font-family: 'Ubuntu-Regular', sans-serif;
+      background-color: hsl(229, 24%, 87%);
+    }
+    .main {
+      /*overflow: hidden;*/
+      position: absolute;
+      width: 65%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      border-radius: 25px;
+    }
+
+    .leftSide {
+      float: left;
+      background-image: url("assets/images/bg-sidebar-desktop.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+      margin: 20px;
+      width: 30%;
+      padding-bottom: 35%;
+    }
+
+    .leftSide div {
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-top: 25px;
+    }
+
+    .stepNum {
+      color: hsl(231, 11%, 63%);
+      font-size: 12px;
+      font-weight: 300;
+      margin: 0;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+    }
+
+    .numberLeftside {
+      display: block;
+      width: 30px;
+      height: 30px;
+      background-color: transparent;
+      color: #fff;
+      border: 1px solid #fff;
+      text-align: center;
+      border-radius: 20px;
+      line-height: 30px;
+      font-weight: 600;
+    }
+
+    .step-number {
+      margin-right: 10px;
+    }
+
+    .step-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .underLeftText {
+      color: #fff;
+      font-size: 18px;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .rightSide {
+      float: right;
+      width: 60%;
+      margin-top: 35px;
+    }
+
+    .rightSide h1 {
+      color: hsl(213, 96%, 18%);
+      font-weight: bolder;
+      font-size: 36px;
+    }
+    .stepDesc {
+      color: gray;
+    }
+
+    .inputName {
+      color: hsl(213, 96%, 18%);
+    }
+
+    .inputForm {
+      display: block;
+      padding-bottom: 10px;
+    }
+
+    .inputForms {
+      padding-top: 40px;
+    }
+    input {
+      padding: 20px;
+      font-size: 22px;
+      font-weight: bolder;
+      color: gray;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      width: 80%;
+      border: 1px solid gray;
+    }
+
+    .nextStep {
+      padding: 16px;
+      color: hsl(0, 0%, 100%);
+      background-color: hsl(213, 96%, 18%);
+      font-size: 18px;
+      border-radius: 10px;
+      border: #fff;
+      width: 12%;
+      font-weight: 600;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-right: 100px;
+      margin-bottom: 30px;
+    }
+
+    .nextStep:hover {
+      background-color: hsla(213, 96%, 18%, 0.904);
+    }
+
+    .goBack {
+      padding: 16px;
+      color: hsl(213, 96%, 18%);
+      background-color: #fff;
+      border: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 10px;
+      width: 12%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-right: 50%;
+      margin-bottom: 30px;
+    }
+
+    button:hover {
+      cursor: pointer;
+    }
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="leftSide">
+      <div>
+        <div class="step">
+          <div class="step-number">
+            <span class="numberLeftside" style="background-color: hsl(206, 94%, 87%); color: black;">1</span>
+          </div>
+          <div class="step-text">
+            <p class="stepNum">STEP 1</p>
+            <p class="underLeftText">YOUR INFO</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">
+            <span class="numberLeftside">2</span>
+          </div>
+          <div class="step-text">
+            <p class="stepNum">STEP 2</p>
+            <p class="underLeftText">SELECT PLAN</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">
+            <span class="numberLeftside">3</span>
+          </div>
+          <div class="step-text">
+            <p class="stepNum">STEP 3</p>
+            <p class="underLeftText">ADD-ONS</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">
+            <span class="numberLeftside">4</span>
+          </div>
+          <div class="step-text">
+            <p class="stepNum">STEP 4</p>
+            <p class="underLeftText">SUMMARY</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rightSide">
+      <!--
+      <h1>Personal info</h1>
+      <p class="stepDesc">Please provide your name, email address, and phone number.</p>
+      <div class="inputForms">
+        <div class="inputForm">
+          <label class="inputName">Name</label>
+        </div>
+        <div class="inputForm">
+          <input type="text" placeholder="e.g. Stephen King"/>
+        </div>
+        <div class="inputForm">
+          <label class="inputName">Email Address</label>
+        </div>
+        <div class="inputForm">
+          <input type="email" placeholder="e.g. stephenking@lorem.com"/>
+        </div>
+        <div class="inputForm">
+          <label class="inputName">Phone Number</label>
+        </div>
+        <div class="inputForm">
+          <input type="tel" placeholder="e.g. +1 234 567 890"/>
+        </div>
+      </div>
+      -->
+      <h1>Select your plan</h1>
+      <p class="stepDesc">You have the option of monthly or yearly billing.</p>
+      <button class="goBack">Go Back</button>
+      <button class="nextStep">Next Step</button>
+    </div>
+    <!---------------------->
+    <!--
+    Select your plan
+    You have the option of monthly or yearly billing.
+
+    Arcade
+    $9/mo
+
+    Advanced
+    $12/mo
+
+    Pro
+    $15/mo
+
+    Monthly
+    Yearly
+
+    Go Back
+    Next Step
+
+
+    Pick add-ons
+    Add-ons help enhance your gaming experience.
+
+    Online service
+    Access to multiplayer games
+    +$1/mo
+
+    Larger storage
+    Extra 1TB of cloud save
+    +$2/mo
+
+    Customizable Profile
+    Custom theme on your profile
+    +$2/mo
+
+    Go Back
+    Next Step
+
+    Finishing up
+    Double-check everything looks OK before confirming.
+
+    Total (per month/year)
+
+    Go Back
+    Confirm
+
+    Thank you!
+
+    Thanks for confirming your subscription! We hope you have fun 
+    using our platform. If you ever need support, please feel free 
+    to email us at support@loremgaming.com.
+    -->
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">robertsubotic</a>.
+  </div>
+</body>
+</html>
