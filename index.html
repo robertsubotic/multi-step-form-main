@@ -1,13 +1,13 @@
 <!DOCTYPE html>
+<!-- STILL HAVEN'T FINISHED THIS! -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
   <title>Frontend Mentor | Multi-step form</title>
-
   <style>
     @font-face {
       font-family: 'Ubuntu-Regular';
@@ -57,7 +57,7 @@
       align-items: center;
     }
 
-    .numberLeftside {
+    .numberLeftside1 {
       display: block;
       width: 30px;
       height: 30px;
@@ -68,6 +68,47 @@
       border-radius: 20px;
       line-height: 30px;
       font-weight: 600;
+    }
+    .numberLeftside2 {
+      display: block;
+      width: 30px;
+      height: 30px;
+      background-color: transparent;
+      color: #fff;
+      border: 1px solid #fff;
+      text-align: center;
+      border-radius: 20px;
+      line-height: 30px;
+      font-weight: 600;
+    }
+    .numberLeftside3 {
+      display: block;
+      width: 30px;
+      height: 30px;
+      background-color: transparent;
+      color: #fff;
+      border: 1px solid #fff;
+      text-align: center;
+      border-radius: 20px;
+      line-height: 30px;
+      font-weight: 600;
+    }
+    .numberLeftside4 {
+      display: block;
+      width: 30px;
+      height: 30px;
+      background-color: transparent;
+      color: #fff;
+      border: 1px solid #fff;
+      text-align: center;
+      border-radius: 20px;
+      line-height: 30px;
+      font-weight: 600;
+    }
+
+    #error {
+      color: red;
+      margin-left: 31%;
     }
 
     .step-number {
@@ -110,7 +151,7 @@
     }
 
     .inputForms {
-      padding-top: 40px;
+      padding-top: 20px;
     }
     input {
       padding: 20px;
@@ -145,7 +186,7 @@
 
     .goBack {
       padding: 16px;
-      color: hsl(213, 96%, 18%);
+      color: gray;
       background-color: #fff;
       border: #fff;
       font-size: 18px;
@@ -159,10 +200,245 @@
       margin-bottom: 30px;
     }
 
+    .goBack:hover {
+      color:hsl(213, 96%, 18%);
+    }
+
+    .plans {
+      display: flex;
+    }
+
+    .plans div {
+      margin-top: 50px;
+      margin-right: 160px;
+      border: solid 1px gray;
+      padding: 10px;
+    }
+
     button:hover {
       cursor: pointer;
     }
 
+    .plans button:hover {
+      border-color: hsl(243, 100%, 62%);
+    }
+
+    .plans button {
+      width: 200px;
+      height: 225px;
+      margin-right: 25px;
+      text-align: left; 
+      background-color: rgb(255, 255, 255);
+      border-radius: 20px;
+      border: gray solid 1px;
+    }
+    .plans h2 {
+      color: hsl(213, 96%, 18%);
+    }
+
+    .plans p {
+      color: gray;
+      font-size: 18px;
+    }
+
+    .plans button img, h2, p {
+      margin: 10px;
+    }
+
+    .freeMonths {
+      color: hsl(213, 96%, 18%) !important;
+    }
+
+    .plans button img {
+      margin-bottom: 40px;
+    }
+
+    .stepDesc {
+      margin: 0;
+      margin-bottom: 30px;
+    }
+
+    .toggle {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 22px;
+    }
+
+    .toggle input {
+      display: none;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: hsl(213, 96%, 18%);
+      transition: .4s;
+      border-radius: 10px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 16px;
+      border-radius: 100%;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(16px);
+    }
+    .monthlyYearly {
+      display: flex;
+      background-color: hsla(229, 85%, 95%, 0.39);
+      margin-top: 40px;
+      width: 87%;
+      height: 70px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 15px;      
+    }
+    .monthly {
+      font-size: 16px;
+      padding-right: 20px;
+      color: hsl(213, 96%, 18%);
+    }
+
+    .yearly {
+      font-size: 16px;
+      color: rgb(128, 128, 128);
+      padding-left: 20px;
+    }
+
+    .addOns div h2 {
+      color: hsl(213, 96%, 18%);
+    }
+    .addOns {
+      padding-top: 30px;
+    }
+    .addOns > div {
+      border: gray 1px solid;
+      width: 85%;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .price {
+      margin-left: auto;
+      padding-right: 15px;
+      color: hsla(243, 79%, 50%);
+    }
+    .checkbox:checked {
+      background-color: purple;
+    }
+    .addOns div input {
+      margin: 30px;
+      width: 5%;
+    }
+    .addOns div .title {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .checkbox {
+      transform: scale(1.5);
+    }
+    .title > p {
+      color: gray;
+    }
+    .summary {
+      padding-left: 25px;
+      padding-top: 15px;
+      background-color: hsla(229, 85%, 95%, 0.39);
+      width: 80%;
+      border-radius: 20px;
+      justify-content: space-between;
+      padding-bottom: 15px;
+      margin-bottom: 10px;
+    }
+    .summary > div > h3 {
+      color: hsl(213, 96%, 18%);
+    }
+    .summary p {
+      color: gray;
+    }
+    .summary > div > a {
+      color: gray;
+    }
+    .summary > div > a:hover {
+      color: hsl(213, 96%, 18%);
+      text-decoration: underline;
+      cursor: pointer;
+      text-decoration-thickness: 2px;
+    }
+    .summary > hr {
+      margin-top: 30px;
+      width: 95%;
+      margin-left: 2px;
+    }
+
+    .addOns div:hover {
+      cursor: pointer;
+    }
+    .firstSummary {
+      display: flex;
+    }
+    .priceSummary {
+      margin-left: auto;
+      margin-right: 25px;
+      font-weight: 600;
+    }
+    .summary a {
+      position: absolute;
+      margin-top: 50px;
+    }
+    .secondPriceSummary {
+      color: hsl(213, 96%, 18%) !important;
+      padding-left: 68%;
+      font-weight: 600;
+    }
+    .secondSummary {
+      display: block;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    .secondSummary p {
+      margin-left: 0;
+    }
+
+    .secondSummary div {
+      display: flex;
+      margin-bottom: 10px;
+    }
+    .totalSummary {
+      display: flex;
+      align-items: center;
+    }
+    .totalSummary h2 {
+      text-align: right;
+      margin-left: 50%;
+      color: hsl(243, 100%, 62%);
+    }
+    .thanksText {
+      color: gray;
+    }
+    .thankYou {
+      justify-content: center;
+      text-align: center;
+      margin-left: 10%;
+      margin-top: 30%;
+      margin-right: 25%;
+    }
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
@@ -173,7 +449,7 @@
       <div>
         <div class="step">
           <div class="step-number">
-            <span class="numberLeftside" style="background-color: hsl(206, 94%, 87%); color: black;">1</span>
+            <span class="numberLeftside1" style="background-color: hsl(206, 94%, 87%); color: black;">1</span>
           </div>
           <div class="step-text">
             <p class="stepNum">STEP 1</p>
@@ -183,7 +459,7 @@
 
         <div class="step">
           <div class="step-number">
-            <span class="numberLeftside">2</span>
+            <span class="numberLeftside2">2</span>
           </div>
           <div class="step-text">
             <p class="stepNum">STEP 2</p>
@@ -193,7 +469,7 @@
 
         <div class="step">
           <div class="step-number">
-            <span class="numberLeftside">3</span>
+            <span class="numberLeftside3">3</span>
           </div>
           <div class="step-text">
             <p class="stepNum">STEP 3</p>
@@ -203,7 +479,7 @@
 
         <div class="step">
           <div class="step-number">
-            <span class="numberLeftside">4</span>
+            <span class="numberLeftside4">4</span>
           </div>
           <div class="step-text">
             <p class="stepNum">STEP 4</p>
@@ -213,93 +489,138 @@
       </div>
     </div>
     <div class="rightSide">
-      <!--
-      <h1>Personal info</h1>
-      <p class="stepDesc">Please provide your name, email address, and phone number.</p>
-      <div class="inputForms">
-        <div class="inputForm">
-          <label class="inputName">Name</label>
-        </div>
-        <div class="inputForm">
-          <input type="text" placeholder="e.g. Stephen King"/>
-        </div>
-        <div class="inputForm">
-          <label class="inputName">Email Address</label>
-        </div>
-        <div class="inputForm">
-          <input type="email" placeholder="e.g. stephenking@lorem.com"/>
-        </div>
-        <div class="inputForm">
-          <label class="inputName">Phone Number</label>
-        </div>
-        <div class="inputForm">
-          <input type="tel" placeholder="e.g. +1 234 567 890"/>
+      <div class="first" style="display: '';">
+        <h1>Personal info</h1>
+        <p class="stepDesc">Please provide your name, email address, and phone number.</p>
+        <div class="inputForms">
+          <div class="inputForm">
+            <label class="inputName">Name</label>
+          </div>
+          <div class="inputForm">
+            <input type="text" id="username" placeholder="e.g. Stephen King"/>
+          </div>
+          <div class="inputForm">
+            <label class="inputName">Email Address</label>
+          </div>
+          <div class="inputForm">
+            <input type="email" id="email" placeholder="e.g. stephenking@lorem.com"/>
+          </div>
+          <div class="inputForm">
+            <label class="inputName">Phone Number</label>
+          </div>
+          <div class="inputForm">
+            <input type="tel" id="phonenumber" placeholder="e.g. +1 234 567 890"/>
+          </div>
+          <div id="error"></div>
         </div>
       </div>
-      -->
-      <h1>Select your plan</h1>
-      <p class="stepDesc">You have the option of monthly or yearly billing.</p>
-      <button class="goBack">Go Back</button>
-      <button class="nextStep">Next Step</button>
+      <div class="second" style="display: none;">
+        <h1>Select your plan</h1>
+        <p class="stepDesc">You have the option of monthly or yearly billing.</p>
+        <div class="plans">
+          <button class="arcade">
+            <img src="assets/images/icon-arcade.svg" />
+            <h2>Arcade</h2>
+            <p>$<span id="priceArcade">9</span><span class="monthlyoryearly">/mo</span></p>
+            <p class="freeMonths">2 months free</p>
+          </button>
+          <button class="advanced">
+            <img src="assets/images/icon-advanced.svg" />
+            <h2>Advanced</h2>
+            <p>$<span id="priceAdvanced">12</span><span class="monthlyoryearly">/mo</span></p>
+            <p class="freeMonths">2 months free</p>
+          </button>
+          <button class="pro">
+            <img src="assets/images/icon-pro.svg" />
+            <h2>Pro</h2>
+            <p>$<span id="pricePro">15</span><span class="monthlyoryearly">/mo</span></p>
+            <p class="freeMonths">2 months free</p>
+          </button>
+        </div>
+        <div class="monthlyYearly">
+          <h2 class="monthly">Monthly</h2>
+          <label class="toggle">
+            <input id="slider" type="checkbox">
+            <span class="slider"></span>
+          </label>
+          <h2 class="yearly">Yearly</h2>
+        </div>
+      </div>
+      <div class="third" style="display: none;">
+        <h1>Pick add-ons</h1>
+        <p class="stepDesc">Add-ons help enhance your gaming experience.</p>
+        <div class="addOns">
+          <div class="onlineService">
+            <input type="checkbox" class="checkbox" value="1" />
+            <div class="title">
+              <h2>Online service</h2>
+              <p>Access to multiplayer games</p>
+            </div>
+            <p class="price">+10$/yr</p>
+          </div>
+
+          <div class="largerStorage">
+            <input type="checkbox" class="checkbox" value="1" />
+            <div class="title">
+              <h2>Larger storage</h2>
+              <p>Extra 1TB of cloud save</p>
+            </div>
+            <p class="price">+20$/yr</p>
+          </div>
+
+          <div class="customizableProfile">
+            <input type="checkbox" class="checkbox" value="1" />
+            <div class="title">
+              <h2>Customizable Profile</h2>
+              <p>Custom theme on your profile</p>
+            </div>
+            <p class="price">+20$/yr</p>
+          </div>
+        </div>
+      </div>
+      <div class="fourth" style="display: none;">
+        <h1>Finishing up</h1>
+        <p class="stepDesc">Double-check everything looks OK before confirming.</p>
+        <div class="summary">
+          <div class="firstSummary">
+            <h3>Arcade (Monthly)</h3>
+            <a>Change</a>
+            <h3 class="priceSummary">$9/mo</h3>
+          </div>
+          <hr>
+          <div class="secondSummary">
+            <div>
+              <p>Online service</p>
+              <p class="secondPriceSummary">+$1/mo</p>
+            </div>
+            <div>
+              <p>Larger storage</p>
+              <p class="secondPriceSummary">+$2/mo</p>
+            </div>
+          </div>
+        </div>
+        <div class="totalSummary">
+          <p>Total(per month):</p>
+          <h2>+$12/mo</h2>
+        </div>
+      </div>
+      <div class="fifth" style="display: none;">
+        <div class="thankYou">
+          <img src="assets/images/icon-thank-you.svg"/>
+          <h1>Thank you!</h1>
+          <p class="thanksText">Thanks for confirming your subscription! We hope you have fun 
+            using our platform. If you ever need support, please feel free 
+            to email us at support@loremgaming.com.</p>
+        </div>
+      </div>
+      <button class="goBack" style="display: none;" onclick="goBack();">Go Back</button>
+      <button class="nextStep" onclick="nextStep();">Next Step</button>
     </div>
-    <!---------------------->
-    <!--
-    Select your plan
-    You have the option of monthly or yearly billing.
-
-    Arcade
-    $9/mo
-
-    Advanced
-    $12/mo
-
-    Pro
-    $15/mo
-
-    Monthly
-    Yearly
-
-    Go Back
-    Next Step
-
-
-    Pick add-ons
-    Add-ons help enhance your gaming experience.
-
-    Online service
-    Access to multiplayer games
-    +$1/mo
-
-    Larger storage
-    Extra 1TB of cloud save
-    +$2/mo
-
-    Customizable Profile
-    Custom theme on your profile
-    +$2/mo
-
-    Go Back
-    Next Step
-
-    Finishing up
-    Double-check everything looks OK before confirming.
-
-    Total (per month/year)
-
-    Go Back
-    Confirm
-
-    Thank you!
-
-    Thanks for confirming your subscription! We hope you have fun 
-    using our platform. If you ever need support, please feel free 
-    to email us at support@loremgaming.com.
-    -->
   </div>
-  
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">robertsubotic</a>.
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
